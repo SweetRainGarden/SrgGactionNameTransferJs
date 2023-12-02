@@ -32,7 +32,7 @@ try {
   }
 
   let result = "com.";
-  for (let i = 0; i < sections.length -1; i++) {=
+  for (let i = 0; i < sections.length -1; i++) {
     result += sections[i];
     if (i < sections.length - 2) {
         result += '.';
