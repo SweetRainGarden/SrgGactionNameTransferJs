@@ -1,0 +1,15 @@
+name: 'String Manipulation Action'
+description: 'Break down strings based on uppercase or dash and output sections'
+inputs:
+  inputString:
+    description: 'String to process (default: current repository name)'
+    required: false
+    default: ${{ github.repository }}
+outputs:
+  firstSection:
+    description: "The first section of the string"
+  lastTwoSections:
+    description: "The last two sections of the string"
+runs:
+  using: 'node12'
+  main: 'index.js'
