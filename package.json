@@ -1,0 +1,10 @@
+{
+    "name": "name_transfer_gction",
+    "version": "1.0.0",
+    "description": "Name transfer GitHub Action",
+    "main": "index.js",
+    "dependencies": {
+      "@actions/core": "^1.6.0"
+    }
+  }
+  
