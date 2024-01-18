@@ -40,16 +40,15 @@ try {
       plugin_id += sections[i];
     }
     middleSection += sections[i]
-    if (i < sections.length - 2) {
+    if (i > 2 && i < sections.length - 2) {
       plugin_id += '.';
-      middleSection += '.';
+
     }
   }
   core.setOutput('plugin_org', sections[0]);
   core.setOutput('plugin_id', plugin_id);
   core.setOutput('name_prefix', sections[0]);
   core.setOutput('name_suffix', sections[sections.length - 1]);
-  core.setOutput('name_middle_section', middleSection);
   core.setOutput('full_com_plugin_format', "com." + sections[0] + "." + plugin_type + ":" + plugin_id);
 
 
