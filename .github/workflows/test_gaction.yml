@@ -26,3 +26,6 @@ jobs:
         run: |
           echo "plugin_org=${{ steps.step_test_current_gaction.outputs.plugin_org }}"
           echo "plugin_id=${{ steps.step_test_current_gaction.outputs.plugin_id }}"
+          echo "name_prefix=${{ steps.step_test_current_gaction.outputs.name_prefix }}"
+          echo "name_suffix=${{ steps.step_test_current_gaction.outputs.name_suffix }}"
+          echo "name_middle_section=${{ steps.step_test_current_gaction.outputs.name_middle_section }}"

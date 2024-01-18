@@ -32,14 +32,21 @@ try {
   }
 
   let result = "com.";
+  let middleSection=""
   for (let i = 0; i < sections.length -1; i++) {
     result += sections[i];
+    middleSection += sections[i]
     if (i < sections.length - 2) {
         result += '.';
+        middleSection += '.';
     }
 }
   core.setOutput('plugin_org', sections[0]);
   core.setOutput('plugin_id', result);
+  core.setOutput('name_prefix', sections[0]);
+  core.setOutput('name_suffix', sections[sections.length - 1]);
+  core.setOutput('name_middle_section', middleSection);
+
   
 } catch (error) {
   core.setFailed(error.message);
