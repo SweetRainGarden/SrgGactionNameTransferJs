@@ -33,16 +33,15 @@ try {
 
   let plugin_id = "";
   let plugin_type = sections[1]
-  let middleSection = ""
+
   for (let i = 0; i < sections.length - 1; i++) {
 
     if (i > 1) {
       plugin_id += sections[i];
     }
-    middleSection += sections[i]
-    if (i > 2 && i < sections.length - 2) {
-      plugin_id += '.';
 
+    if (i > 1 && i < sections.length - 2) {
+      plugin_id += '.';
     }
   }
   core.setOutput('plugin_org', sections[0]);
