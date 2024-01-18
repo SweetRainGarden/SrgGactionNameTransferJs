@@ -46,6 +46,7 @@ try {
   }
   core.setOutput('plugin_org', sections[0]);
   core.setOutput('plugin_id', plugin_id);
+  core.setOutput('plugin_type', plugin_type);
   core.setOutput('name_prefix', sections[0]);
   core.setOutput('name_suffix', sections[sections.length - 1]);
   core.setOutput('full_com_plugin_format', "com." + sections[0] + "." + plugin_type + ":" + plugin_id);
