@@ -6,10 +6,10 @@ inputs:
     required: false
     default: ${{ github.repository }}
 outputs:
-  firstSection:
-    description: "The first section of the string"
-  lastTwoSections:
-    description: "The last two sections of the string"
+  plugin_org:
+    description: "repo org"
+  plugin_id:
+    description: "plugin id"
 runs:
   using: 'node16'
   main: 'index.js'

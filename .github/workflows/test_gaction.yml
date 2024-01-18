@@ -24,5 +24,5 @@ jobs:
       - name: "Echo step output"
         id: step_echo_output
         run: |
-          echo "firstSection=${{ steps.step_test_gaction.outputs.firstSection }}"
-          echo "lastTwoSections=${{ steps.step_test_gaction.outputs.lastTwoSections }}"
+          echo "plugin_org=${{ steps.step_test_gaction.outputs.plugin_org }}"
+          echo "plugin_id=${{ steps.step_test_gaction.outputs.plugin_id }}"
