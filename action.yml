@@ -11,5 +11,5 @@ outputs:
   lastTwoSections:
     description: "The last two sections of the string"
 runs:
-  using: 'node12'
+  using: 'node16'
   main: 'index.js'
