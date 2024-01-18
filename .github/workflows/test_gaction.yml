@@ -7,22 +7,22 @@ on:
     branches: [ "develop" ]
 
 jobs:
-    test_current_gaction:
-        strategy:
-                matrix:
-                    os: [ macos-latest, ubuntu-latest ]
-        runs-on: ${{ matrix.os }}
+  test_current_gaction:
+    strategy:
+      matrix:
+        os: [ macos-latest, ubuntu-latest ]
+    runs-on: ${{ matrix.os }}
 
-        steps:
-        - uses: actions/checkout@v4
+    steps:
+      - uses: actions/checkout@v4
 
-        - name: "Set build env --> 3: Config gradle"
-          id: step_test_gaction
-          uses: SweetRainGarden/SrgGactionNameTransferJs@develop
-          with:
-            inputString: " ${{ github.event.repository.name }}"
-        - name: "Echo step output"
-          id: step_echo_output
-          run: |
-            echo "firstSection=${{ steps.step_test_gaction.outputs.firstSection }}"
-            echo "lastTwoSections=${{ steps.step_test_gaction.outputs.lastTwoSections }}"
+      - name: "Test current gaction"
+        id: step_test_gaction
+        uses: SweetRainGarden/SrgGactionNameTransferJs@develop
+        with:
+          inputString: " ${{ github.event.repository.name }}"
+      - name: "Echo step output"
+        id: step_echo_output
+        run: |
+          echo "firstSection=${{ steps.step_test_gaction.outputs.firstSection }}"
+          echo "lastTwoSections=${{ steps.step_test_gaction.outputs.lastTwoSections }}"
