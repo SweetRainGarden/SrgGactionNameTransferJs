@@ -1,4 +1,4 @@
-name: Test CI
+name: Test Current Gaction
 
 on:
   push:
@@ -7,7 +7,7 @@ on:
     branches: [ "develop" ]
 
 jobs:
-  test_current_gaction:
+  job_test_current_gaction:
     strategy:
       matrix:
         os: [ macos-latest, ubuntu-latest ]
@@ -17,7 +17,7 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: "Test current gaction"
-        id: step_test_gaction
+        id: step_test_current_gaction
         uses: SweetRainGarden/SrgGactionNameTransferJs@develop
         with:
           inputString: " ${{ github.event.repository.name }}"
