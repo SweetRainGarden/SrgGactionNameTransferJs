@@ -5,23 +5,23 @@ try {
     let sections = [];
     let currentSection = "";
     for (let i = 0; i < str.length; i++) {
-        let isUppercaseLetter =  isNaN(str[i]) && str[i].toUpperCase() === str[i];
-        let charToAdd = isUppercaseLetter ? str[i].toLowerCase() : str[i];
+      let isUppercaseLetter = isNaN(str[i]) && str[i].toUpperCase() === str[i];
+      let charToAdd = isUppercaseLetter ? str[i].toLowerCase() : str[i];
 
-        if (str[i] === '-' || isUppercaseLetter) {
-            if (currentSection !== "") {
-                sections.push(currentSection);
-            }
-            if (isUppercaseLetter) {
-                currentSection = charToAdd;
-            }
-            
-        } else {
-            currentSection += charToAdd;
+      if (str[i] === '-' || isUppercaseLetter) {
+        if (currentSection !== "") {
+          sections.push(currentSection);
         }
+        if (isUppercaseLetter) {
+          currentSection = charToAdd;
+        }
+
+      } else {
+        currentSection += charToAdd;
+      }
     }
     if (currentSection !== "") {
-        sections.push(currentSection);
+      sections.push(currentSection);
     }
     return sections;
   };
@@ -31,23 +31,28 @@ try {
     throw new Error("String doesn't have enough sections to process");
   }
 
-  let result = "com.";
-  let middleSection=""
-  for (let i = 0; i < sections.length -1; i++) {
-    result += sections[i];
+  let plugin_id = "";
+  let plugin_type = sections[1]
+  let middleSection = ""
+  for (let i = 0; i < sections.length - 1; i++) {
+
+    if (i > 1) {
+      plugin_id += sections[i];
+    }
     middleSection += sections[i]
     if (i < sections.length - 2) {
-        result += '.';
-        middleSection += '.';
+      plugin_id += '.';
+      middleSection += '.';
     }
-}
+  }
   core.setOutput('plugin_org', sections[0]);
-  core.setOutput('plugin_id', result);
+  core.setOutput('plugin_id', plugin_id);
   core.setOutput('name_prefix', sections[0]);
   core.setOutput('name_suffix', sections[sections.length - 1]);
   core.setOutput('name_middle_section', middleSection);
+  core.setOutput('full_com_plugin_format', "com." + sections[0] + "." + plugin_type + ":" + plugin_id);
 
-  
+
 } catch (error) {
   core.setFailed(error.message);
 }
