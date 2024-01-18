@@ -41,7 +41,7 @@ try {
     }
 
     if (i > 1 && i < sections.length - 2) {
-      plugin_id += '.';
+      plugin_id += '-';
     }
   }
   core.setOutput('plugin_org', sections[0]);
