@@ -4,7 +4,7 @@
     "description": "Name transfer GitHub Action",
     "main": "index.js",
     "dependencies": {
-      "@actions/core": "^1.6.0"
+      "@actions/core": "^3.0.0"
     }
   }
   
